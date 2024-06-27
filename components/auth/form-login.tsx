@@ -13,11 +13,13 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
+import { FormError } from "@/components/form-error";
+import { FormSuccess } from "@/components/form-success";
 
 import { loginSchema } from "@/schemas";
 
 import { CardWrapper } from "./wrapper-card";
-import { Button } from "../ui/button";
 
 export function LoginForm() {
   const form = useForm<z.infer<typeof loginSchema>>({
@@ -74,6 +76,8 @@ export function LoginForm() {
               )}
             />
           </div>
+          <FormError message="" />
+          <FormSuccess message="" />
           <Button type="submit" className="w-full">
             Login
           </Button>
